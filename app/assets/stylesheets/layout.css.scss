@@ -12,12 +12,8 @@ html, body {
   @include no_margin_no_padding;
   margin-bottom: -2 -$footer_height;
   header.header {
+    @include white_bg;
     width: 100%;
-    -webkit-border-image: none;
-    -webkit-box-shadow: rgba(0, 0, 0, 0.0980392) 0px -1px 0px 0px inset, rgba(0, 0, 0, 0.0980392) 0px 1px 10px 0px;
-    background-color: #FAFAFA;
-    background-image: -webkit-linear-gradient(top, white, #F2F2F2);
-    background-repeat: repeat-x;
     height: $header_height - 2*$header_padding;
     border-bottom-style: solid;
     border-bottom-width: 1px;
@@ -33,17 +29,19 @@ html, body {
     }
   }
   .main_body_part {
-    width: $site_width - 2*$content_padding;
-    padding: $content_padding;
+    width: 100%;
+    .inner_content{
+      margin: auto;
+      width: $site_width - 2*$content_padding;
+      padding: $content_padding;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      color: #777;
+    }
   }
 }
 
 .footer {
-  -webkit-border-image: none;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.0980392) 0px -1px 0px 0px inset, rgba(0, 0, 0, 0.0980392) 0px 1px 10px 0px;
-  background-color: #FAFAFA;
-  background-image: -webkit-linear-gradient(top, white, #F2F2F2);
-  background-repeat: repeat-x;
+  @include white_bg;
   border-top-style: solid;
   border-top-width: 1px;
   border-top-color: #D4D4D4;

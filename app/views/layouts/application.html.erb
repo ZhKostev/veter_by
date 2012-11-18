@@ -14,7 +14,9 @@
     </div>
   </header>
   <div class="main_body_part">
-
+    <div class="inner_content">
+      <%= yield %>
+    </div>
   </div>
 </div>
 
@@ -29,7 +31,6 @@
 <div style="display: none;" id="image_preload_cont">
 </div>
 </body>
-
 <script type="text/javascript">
     $(function () {
         /*load image to browser*/

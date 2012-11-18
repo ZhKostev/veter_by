@@ -14,6 +14,10 @@ $link_color: blue;
 $link_visited_color: #00008b;
 
 
+//for gmap
+$gmap_width: 700px;
+$gmap_height: 400px;
+//end for gmap
 @mixin full_w_h {
   height: 100%;
   width: 100%;
@@ -23,3 +27,12 @@ $link_visited_color: #00008b;
   margin: 0;
   padding: 0;
 }
+
+@mixin white_bg {
+  -webkit-border-image: none;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.0980392) 0px -1px 0px 0px inset, rgba(0, 0, 0, 0.0980392) 0px 1px 10px 0px;
+  background-color: #FAFAFA;
+  background-image: -webkit-linear-gradient(top, white, #F2F2F2);
+  background-repeat: repeat-x;
+}
+

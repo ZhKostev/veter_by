@@ -1,0 +1,27 @@
+@import "variables_and_mixins.css.scss";
+
+.map_container {
+  padding: 6px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #ccc #ccc #999 #ccc;
+  -webkit-box-shadow: rgba(64, 64, 64, 0.5) 0 2px 5px;
+  -moz-box-shadow: rgba(64, 64, 64, 0.5) 0 2px 5px;
+  box-shadow: rgba(64, 64, 64, 0.1) 0 2px 5px;
+  width: $gmap_width;
+  .gmaps4rails_map {
+    width: $gmap_width;
+    height: $gmap_height;
+    .bing_map {
+      position: absolute;
+      top: 20;
+      left: 10;
+      width: 400px;
+      height: 400px;
+      border:#555555 2px solid;
+    }
+  }
+}
+
+
+

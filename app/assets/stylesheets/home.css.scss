@@ -1,4 +1,13 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in admin.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "variables_and_mixins.css.scss";
+
+.map_description{
+  width: $site_width - 2*$content_padding - $gmap_width - 40;
+  .map_description_content{
+    width: 100%;
+    @include white_bg;
+  }
+}
 

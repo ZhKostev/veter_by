@@ -1,2 +1,17 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="left">
+  <%#= gmaps4rails(@gmap_json) %>
+  <%= gmaps(:markers => {:data => @gmap_json, :options => { :raw => '{ animation: google.maps.Animation.BOUNCE }' } },
+            :map_options => { :raw => '{ disableDefaultUI: true, scrollwheel: false }' },
+            "map_options" => {:language => 'ru', :hl => 'ru', :region => 'ru'}
+      ) %>
+</div>
+
+<div class="right map_container map_description">
+    <div class="map_description_content">
+      ASD
+    </div>
+</div>
+
+<div class="clear"></div>
+<%= yield :scripts %>
+

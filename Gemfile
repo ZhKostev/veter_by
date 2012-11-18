@@ -10,6 +10,7 @@ gem 'execjs' #fix error in assets
 gem 'zh_kostev_ext' #my gem for common methods
 gem 'devise' #for authentication
 gem "twitter-bootstrap-rails" #for admin design
+gem 'gmaps4rails' #for google maps integration
 
 # Gems used only for assets and not required
 # in production environments by default.
