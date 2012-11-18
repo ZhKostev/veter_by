@@ -1,0 +1,25 @@
+$site_width: 1000px;
+$header_height: 40px;
+$footer_height: 30px;
+$header_padding: 0px;
+$content_padding: 10px;
+$footer_padding: 0px;
+$standard_margin: 10px;
+$error_color: red;
+$site_text_color: black;
+$site_text_family: Verdana;
+$headers_text_color: black;
+$headers_text_family: Arial;
+$link_color: blue;
+$link_visited_color: #00008b;
+
+
+@mixin full_w_h {
+  height: 100%;
+  width: 100%;
+}
+
+@mixin no_margin_no_padding {
+  margin: 0;
+  padding: 0;
+}

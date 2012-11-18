@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>VeterBy</title>
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="full_w_h body_<%= @bg_image_id %>_small">
+  <header class="header">
+    <div class="inner_head">
+      <a class="brand" href="/">VeterBy</a>
+    </div>
+  </header>
+  <div class="main_body_part">
+
+  </div>
+</div>
+
+
+<footer class="footer">
+  <div class="inner_footer">
+    <div class="right">
+      Created by ZhK (Zhenya kostev <%= link_to 'www.zh_kostev.ru', 'http://www.zh_kostev.ru' %>)
+    </div>
+  </div>
+</footer>
+<div style="display: none;" id="image_preload_cont">
+</div>
+</body>
+
+<script type="text/javascript">
+    $(function () {
+        /*load image to browser*/
+        $('#image_preload_cont').addClass("body_<%= @bg_image_id %>_big");
+        /*set image*/
+        setTimeout(function () {
+            $('.full_w_h').addClass("body_<%= @bg_image_id %>_big")
+        }, 3000);
+    })
+</script>
+</html>

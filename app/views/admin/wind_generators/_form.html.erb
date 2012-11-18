@@ -1,0 +1,50 @@
+<%= form_for @wind_generator, :url => admin_wind_generators_path, :html => {:class => 'form-horizontal'} do |f| %>
+    <div class="control-group">
+      <%= f.label :title, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :title, :class => 'text_field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :min_rated_power, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :min_rated_power, :class => 'text_field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :max_rated_power, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :max_rated_power, :class => 'text_field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :min_rated_wind_speed, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :min_rated_wind_speed, :class => 'text_field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :max_wind_speed, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :max_wind_speed, :class => 'text_field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :latitude, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :latitude, :class => 'text_field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :longitude, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :longitude, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  admin_wind_generators_path, :class => 'btn' %>
+    </div>
+<% end %>

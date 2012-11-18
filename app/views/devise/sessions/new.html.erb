@@ -1,0 +1,25 @@
+<div id="login_form" style="width: 300px; margin: auto">
+
+  <h2>Sign in</h2>
+
+  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :class => 'form-horizontal') do |f| %>
+      <div class="control-group">
+        <%= f.label :email, :class => 'control-label' %>
+        <div class="controls">
+          <%= f.email_field :email, :class => 'text_field' %>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <%= f.label :password, :class => 'control-label' %>
+        <div class="controls">
+          <%= f.password_field :password, :class => 'text_field' %>
+        </div>
+      </div>
+
+
+      <div class="form-actions">
+        <%= f.submit t("links.sing_in"), :class => 'btn btn-primary' %>
+      </div>
+  <% end %>
+</div>

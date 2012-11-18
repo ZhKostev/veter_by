@@ -1,0 +1,1 @@
+Account.create!(:email => 'admin@admin.com', :password => 'admin@admin.com') if Account.with_email('admin@admin.com').blank?

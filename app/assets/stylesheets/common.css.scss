@@ -1,0 +1,69 @@
+@import "variables_and_mixins.css.scss";
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.inline_block{
+  display: inline-block;
+}
+
+.block{
+  display: block;
+}
+
+.clear {
+  clear: both;
+}
+
+.with_top_margin{
+  margin-top: $standard_margin ;
+}
+
+.with_bottom_margin{
+  margin-bottom: $standard_margin ;
+}
+
+.with_right_margin{
+  margin-right: $standard_margin ;
+}
+
+.with_left_margin{
+  margin-left: $standard_margin ;
+}
+
+.no_margin{
+  margin: 0 !important;
+}
+
+.no_padding{
+  padding: 0 !important;
+}
+
+.no_more_space{
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.text_center{
+  text-align: center;
+}
+
+.text_justify{
+  text-align: justify;
+}
+
+.error_color{
+  color: $error_color;
+}
+
+.black_text{
+  color: black;
+}
+
+
+

@@ -1,0 +1,14 @@
+@import 'variables_and_mixins.css.scss';
+
+a {
+  color: $link_color;
+}
+
+a:visited {
+  color: $link_visited_color;
+}
+
+h{
+  color: $headers_text_color;
+  font-family: $headers_text_family;
+}
