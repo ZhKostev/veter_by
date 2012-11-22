@@ -10,6 +10,7 @@
       <th><%= model_class.human_attribute_name(:max_rated_power) %></th>
       <th><%= model_class.human_attribute_name(:min_rated_wind_speed) %></th>
       <th><%= model_class.human_attribute_name(:max_wind_speed) %></th>
+      <th><%= model_class.human_attribute_name(:region) %></th>
       <th><%= model_class.human_attribute_name(:latitude) %></th>
       <th><%= model_class.human_attribute_name(:longitude) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
@@ -23,6 +24,7 @@
         <td><%= wind_generator.max_rated_power %></td>
         <td><%= wind_generator.min_rated_wind_speed %></td>
         <td><%= wind_generator.max_wind_speed %></td>
+        <td><%= wind_generator.region.try(:title) %></td>
         <td><%= wind_generator.latitude %></td>
         <td><%= wind_generator.longitude %></td>
         <td>
@@ -38,6 +40,8 @@
     <% end %>
   </tbody>
 </table>
+
+<%= paginate @wind_generators %>
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_admin_wind_generator_path,

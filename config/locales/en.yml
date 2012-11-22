@@ -3,10 +3,16 @@
 
 en:
   hello: "Hello world"
+
   wind_generators:
     title: Wind Generators
+
+  regions:
+    title: Regions
+
   dashboard:
     title: Dashboard
+
   links:
     logout: Logout
     sing_in: Sign In

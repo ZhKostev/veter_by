@@ -1,6 +1,5 @@
 <div class="left">
-  <%#= gmaps4rails(@gmap_json) %>
-  <%= gmaps(:markers => {:data => @gmap_json, :options => { :raw => '{ animation: google.maps.Animation.BOUNCE }' } },
+  <%= gmaps(:markers => {:data => @gmap_json},
             :map_options => { :raw => '{ disableDefaultUI: true, scrollwheel: false }' },
             "map_options" => {:language => 'ru', :hl => 'ru', :region => 'ru'}
       ) %>
@@ -8,7 +7,7 @@
 
 <div class="right map_container map_description">
     <div class="map_description_content">
-      ASD
+      Description
     </div>
 </div>
 

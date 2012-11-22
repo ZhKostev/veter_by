@@ -1,15 +1,19 @@
 VeterBy::Application.routes.draw do
 
+  match "admin" => "admin/dashboard#index", :as => :admin
   namespace :admin do
     resources :wind_generators
+    resources :regions
   end
 
+  scope :path =>  ':region_id' do
+    get '/', :to => "home#index"
+  end
 
-  match "admin" => "admin/dashboard#index", :as => :admin
-  get "home/index"
   root :to => "home#index"
 
   devise_for :accounts
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

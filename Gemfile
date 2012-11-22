@@ -11,6 +11,9 @@ gem 'zh_kostev_ext' #my gem for common methods
 gem 'devise' #for authentication
 gem "twitter-bootstrap-rails" #for admin design
 gem 'gmaps4rails' #for google maps integration
+gem 'kaminari' #pagination
+gem 'simple_form' #for styled forms
+gem "nested_form" # for nested forms
 
 # Gems used only for assets and not required
 # in production environments by default.

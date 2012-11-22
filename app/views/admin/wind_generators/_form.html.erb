@@ -1,49 +1,26 @@
-<%= form_for @wind_generator,
-             :url => url_for(:controller => 'admin/wind_generators', :action => (@wind_generator.new_record? ? 'create' : 'update')),
-             :html => {:class => 'form-horizontal'} do |f| %>
-    <div class="control-group">
-      <%= f.label :title, :class => 'control-label' %>
-      <div class="controls">
-        <%= f.text_field :title, :class => 'text_field' %>
-      </div>
-    </div>
-    <div class="control-group">
-      <%= f.label :min_rated_power, :class => 'control-label' %>
-      <div class="controls">
-        <%= f.text_field :min_rated_power, :class => 'text_field' %>
-      </div>
-    </div>
-    <div class="control-group">
-      <%= f.label :max_rated_power, :class => 'control-label' %>
-      <div class="controls">
-        <%= f.text_field :max_rated_power, :class => 'text_field' %>
-      </div>
-    </div>
-    <div class="control-group">
-      <%= f.label :min_rated_wind_speed, :class => 'control-label' %>
-      <div class="controls">
-        <%= f.text_field :min_rated_wind_speed, :class => 'text_field' %>
-      </div>
-    </div>
-    <div class="control-group">
-      <%= f.label :max_wind_speed, :class => 'control-label' %>
-      <div class="controls">
-        <%= f.text_field :max_wind_speed, :class => 'text_field' %>
-      </div>
-    </div>
-    <div class="control-group">
-      <%= f.label :latitude, :class => 'control-label' %>
-      <div class="controls">
-        <%= f.text_field :latitude, :class => 'text_field' %>
-      </div>
-    </div>
-    <div class="control-group">
-      <%= f.label :longitude, :class => 'control-label' %>
-      <div class="controls">
-        <%= f.text_field :longitude, :class => 'text_field' %>
-      </div>
-    </div>
+<%= simple_nested_form_for [:admin, @wind_generator], :html => {:class => 'form-horizontal'} do |f| %>
+    <%= f.input :title %>
+    <%= f.input :min_rated_power %>
+    <%= f.input :max_rated_power %>
+    <%= f.input :min_rated_wind_speed %>
+    <%= f.input :max_wind_speed %>
+    <%= f.association :region, :prompt => "Choose Region" %>
+    <%= f.input :latitude %>
+    <%= f.input :longitude %>
 
+    <%= f.simple_fields_for :notifications do |notification_form| %>
+        <%= notification_form.input :email %>
+        <%= notification_form.input :condition, :wrapper_html => { :class => 'notification_condition_select' }  do %>
+            <%= notification_form.select :condition,
+                                         Notification::CONDITIONS.map { |k,v| [v, k] }
+            %>
+        <% end %>
+        <div class="notification_level" style="<%= 'display:none' if notification_form.object.condition != 'min_power' && notification_form.object.condition.present? %>">
+          <%= notification_form.input :level %>
+        </div>
+        <%= notification_form.link_to_remove "Remove this notification", :class =>'btn btn-danger nested_link' %>
+    <% end %>
+    <%= f.link_to_add "Add a notification", :notifications, :class =>'btn btn-success nested_link' %>
     <div class="form-actions">
       <%= f.submit nil, :class => 'btn btn-primary' %>
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
