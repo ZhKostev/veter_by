@@ -1,16 +1,88 @@
 <div class="left">
   <%= gmaps(:markers => {:data => @gmap_json},
-            :map_options => { :raw => '{ disableDefaultUI: true, scrollwheel: false }' },
+            :map_options => {:raw => '{ disableDefaultUI: true, scrollwheel: false }'},
             "map_options" => {:language => 'ru', :hl => 'ru', :region => 'ru'}
       ) %>
 </div>
 
 <div class="right map_container map_description">
-    <div class="map_description_content">
-      Description
+  <div class="map_description_content">
+    <h2>      <%= @region.title %>    </h2>
+
+    <div class="show_row">
+      <div class="show_label">
+        Кол-во электростанции:
+      </div>
+      <div class="show_value">
+        <%= @region.wind_generators.count %>
+      </div>
     </div>
+
+    <div class="show_row">
+      <div class="show_label">
+        Кол-во рабочих электростанции:
+      </div>
+      <div class="show_value">
+        <%= @region.wind_generators.count %>
+      </div>
+    </div>
+
+    <div class="show_row">
+      <div class="show_label">
+        Кол-во вышедших из строя электростанции:
+      </div>
+      <div class="show_value">
+        <%= 0 %>
+      </div>
+    </div>
+
+    <div class="show_row">
+      <div class="show_label">
+        Текущее производство электроэнергии, Вт/ч :
+      </div>
+      <div class="show_value">
+        <%= 600 %>
+      </div>
+    </div>
+
+    <div class="show_row">
+      <div class="show_label">
+        Загрузка эектростанции, % :
+      </div>
+      <div class="show_value">
+        <%= 60 %>
+      </div>
+    </div>
+  </div>
 </div>
 
+<div class="clear"></div>
+
+<div class="map_container project_desc">
+  <div class="project_desc_cont">
+
+    <h2>О проекте</h2>
+
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dapibus mauris in neque egestas eget euismod tortor
+      adipiscing. Curabitur mollis turpis ut diam bibendum ut fermentum diam luctus. Maecenas luctus quam vel risus
+      pulvinar
+      vel malesuada risus feugiat. Etiam interdum nisl sed dolor gravida euismod. Suspendisse ut nisi turpis. Maecenas
+      sit
+      amet libero vel arcu eleifend fringilla. Suspendisse potenti. Sed sit amet nulla tellus. Mauris dui quam, gravida
+      sit
+      amet semper vitae, consectetur eu lorem. Nulla convallis mollis tincidunt.
+    </p>
+
+    <p>
+      Nunc eu sapien metus, sed commodo enim. Donec mauris mauris, ullamcorper non ullamcorper vitae, sagittis in mi.
+      Pellentesque eget ligula non risus mollis vestibulum a et orci. Maecenas feugiat metus a nunc malesuada suscipit.
+      Maecenas faucibus mattis nulla ac molestie. Ut ut vulputate mauris. Integer leo eros, bibendum at bibendum rutrum,
+      semper et turpis. Donec nunc est, iaculis at blandit quis, luctus ut turpis. Pellentesque id turpis elit, ac porta
+      tortor. Nullam quis tortor metus, sit amet eleifend sapien.
+    </p>
+  </div>
+</div>
 <div class="clear"></div>
 <%= yield :scripts %>
 

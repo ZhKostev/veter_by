@@ -1,0 +1,45 @@
+<div class="st_container image_cont">
+  <div class="st_container_content">
+       <%= image_tag @wind_generator.photo_url(:default) %>
+  </div>
+</div>
+
+<div class="st_container charts_cont">
+  <div class="st_container_content">
+    Charts
+  </div>
+</div>
+
+<div class="clear">
+
+</div>
+
+<div class="st_container characteristic_cont">
+  <div class="st_container_content">
+    <table>
+      <thead>
+      <tr>
+        <th colspan="3" style="text-align: center;">Мощность, Вт/ч</th>
+        <th colspan="3" style="text-align: center;">Скорость ветра, м/с</th>
+      </tr>
+      <tr>
+        <th>Мин.</th>
+        <th>Макс.</th>
+        <th>Текущаяя</th>
+        <th>Мин.</th>
+        <th>Макс.</th>
+        <th>Текущаяя</th>
+      </tr>
+      </thead>
+
+      <tr>
+        <td><%= @wind_generator.min_rated_power %></td>
+        <td><%= @wind_generator.max_rated_power %></td>
+        <td id="current_power"><%= 7 %></td>
+        <td><%= @wind_generator.min_rated_wind_speed  %></td>
+        <td><%= @wind_generator.max_wind_speed  %></td>
+        <td id="current_wind"><%= 5 %></td>
+      </tr>
+    </table>
+  </div>
+</div>

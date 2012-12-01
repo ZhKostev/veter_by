@@ -1,13 +1,7 @@
 @import "variables_and_mixins.css.scss";
 
 .map_container {
-  padding: 6px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #ccc #ccc #999 #ccc;
-  -webkit-box-shadow: rgba(64, 64, 64, 0.5) 0 2px 5px;
-  -moz-box-shadow: rgba(64, 64, 64, 0.5) 0 2px 5px;
-  box-shadow: rgba(64, 64, 64, 0.1) 0 2px 5px;
+  @include borders_mixin;
   width: $gmap_width;
   .gmaps4rails_map {
     width: $gmap_width;
@@ -17,8 +11,26 @@
       top: 20;
       left: 10;
       width: 400px;
-      height: 400px;
+      height: $gmap_height;
       border:#555555 2px solid;
+    }
+  }
+}
+
+.gmaps_info{
+  .desc_cont{
+    h4{
+      margin: 0 0 2px 0;
+      font-size: 14px;
+    }
+    font-size: 11px;
+  }
+
+  .img_cont{
+    width: 60px;
+    text-align: center;
+    img{
+      margin-top: 3px;;
     }
   }
 }

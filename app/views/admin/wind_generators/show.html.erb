@@ -3,7 +3,7 @@
   <h1><%=t '.title', :default => model_class.model_name.human %></h1>
 </div>
 
-<%= image_tag 'wind_generator_show.jpg', :class => 'left' %>
+<%= image_tag @wind_generator.photo_url, :class => 'left' %>
 <dl class="dl-horizontal left">
   <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
   <dd><%= @wind_generator.title %></dd>

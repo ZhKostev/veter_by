@@ -8,6 +8,18 @@
     <%= f.input :latitude %>
     <%= f.input :longitude %>
 
+<div class="control-group">
+<label class="select control-label" for="wind_generator_photo">Photo</label>
+<div class="controls">
+    <%= f.file_field :photo %>
+    <%= f.hidden_field :photo_cache %>
+    <div class='clear'></div>
+    <%= image_tag(f.object.photo_url) if f.object.photo? %>
+</div>
+</div>
+
+
+
     <%= f.simple_fields_for :notifications do |notification_form| %>
         <%= notification_form.input :email %>
         <%= notification_form.input :condition, :wrapper_html => { :class => 'notification_condition_select' }  do %>

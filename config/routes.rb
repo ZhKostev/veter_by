@@ -7,7 +7,8 @@ VeterBy::Application.routes.draw do
   end
 
   scope :path =>  ':region_id' do
-    get '/', :to => "home#index"
+    get '/', :to => "home#index", :as => :region_index
+    resources :wind_generators, :only => [:show]
   end
 
   root :to => "home#index"

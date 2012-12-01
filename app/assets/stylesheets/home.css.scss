@@ -3,11 +3,42 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "variables_and_mixins.css.scss";
 
-.map_description{
+.map_description {
   width: $site_width - 2*$content_padding - $gmap_width - 40;
-  .map_description_content{
+  height: $gmap_height;
+  .map_description_content {
     width: 100%;
+    h2{
+      text-align: center;
+     padding-top: 10px;
+    }
+    height: 100%;
     @include white_bg;
+    .show_row {
+      margin: 10px 0;
+      .show_label {
+        text-align: center;
+      }
+      .show_value {
+        text-align: center;
+        font-weight: bold;
+        font-size: 18px;;
+      }
+    }
+
   }
 }
+
+.project_desc {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  width: $site_width - 2*$content_padding - 10;
+  .project_desc_cont {
+    padding: 10px 10px 0 10px;
+    text-align: justify;
+    @include white_bg;
+    margin-bottom: -15px;
+  }
+}
+
 

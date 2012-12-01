@@ -14,11 +14,13 @@ gem 'gmaps4rails' #for google maps integration
 gem 'kaminari' #pagination
 gem 'simple_form' #for styled forms
 gem "nested_form" # for nested forms
+gem 'carrierwave' #for image upload
+gem "mini_magick" #for scale images
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
+  gem 'sass-rails', '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'therubyracer', :platforms => :ruby
@@ -28,6 +30,7 @@ end
 
 gem 'jquery-rails'
 
+
 group :development, :test do
   gem 'rspec-rails' #rspec tests
   gem 'spork', '~> 1.0rc'
@@ -35,6 +38,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'simplecov'
+  gem 'debugger'
 end
 
 # To use ActiveModel has_secure_password

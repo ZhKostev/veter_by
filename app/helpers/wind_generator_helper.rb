@@ -1,0 +1,2 @@
+module WindGeneratorHelper
+end

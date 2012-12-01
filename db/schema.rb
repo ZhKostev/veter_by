@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121122195957) do
+ActiveRecord::Schema.define(:version => 20121201194806) do
 
   create_table "accounts", :force => true do |t|
     t.string   "email",               :default => "", :null => false
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(:version => 20121122195957) do
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
     t.integer  "region_id"
+    t.string   "photo"
   end
 
   add_index "wind_generators", ["region_id"], :name => "wg_region_id_index"

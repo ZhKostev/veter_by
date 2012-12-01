@@ -11,6 +11,13 @@
   <header class="header">
     <div class="inner_head">
       <a class="brand" href="/">VeterBy</a>
+      <div class="container nav-collapse">
+        <ul class="nav">
+          <% @menu_regions.each do |region| %>
+              <li><%= link_to region.title, region_index_path(region) %></li>
+          <% end %>
+        </ul>
+      </div>
     </div>
   </header>
   <div class="main_body_part">
@@ -24,7 +31,7 @@
 <footer class="footer">
   <div class="inner_footer">
     <div class="right">
-      Created by ZhK (Zhenya kostev <%= link_to 'www.zh_kostev.ru', 'http://www.zh_kostev.ru' %>)
+      Created by ZhK (Zhenya kostev)
     </div>
   </div>
 </footer>
