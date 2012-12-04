@@ -9,6 +9,11 @@ VeterBy::Application.routes.draw do
   scope :path =>  ':region_id' do
     get '/', :to => "home#index", :as => :region_index
     resources :wind_generators, :only => [:show]
+    resources :request_handle, :only =>[] do
+      member do
+        get :handle_data_request
+      end
+    end
   end
 
   root :to => "home#index"

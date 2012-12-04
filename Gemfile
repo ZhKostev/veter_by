@@ -16,6 +16,8 @@ gem 'simple_form' #for styled forms
 gem "nested_form" # for nested forms
 gem 'carrierwave' #for image upload
 gem "mini_magick" #for scale images
+gem "private_pub" #for asynchronical requests
+gem 'thin' #for faye
 
 # Gems used only for assets and not required
 # in production environments by default.

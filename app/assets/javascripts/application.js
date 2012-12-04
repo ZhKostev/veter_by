@@ -13,4 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require_directory ./gmaps4rails
+//= require_directory ./Rgraph
+//= require private_pub
 //= require_tree.
