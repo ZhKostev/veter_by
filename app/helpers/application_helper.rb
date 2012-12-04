@@ -1,9 +1,9 @@
 module ApplicationHelper
   def show_chanel(wind_generator)
-    "chanel_of_wind_generator_#{wind_generator.id}"
+    "/wind_generator_chanel/#{wind_generator.id}"
   end
 
   def index_chanel(region)
-    "chanel_of_region_#{region.id}"
+    "/region_chanel/#{region.id}"
   end
 end

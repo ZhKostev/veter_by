@@ -4,7 +4,7 @@
     alert(1)
 <% end %>
 
-<% publish_to index_chanel(@region) do %>
+<% publish_to "#{index_chanel(@region)}" do %>
     $("body").html('a');
 <% end %>
 </script>

@@ -94,12 +94,11 @@
         cg2.Set('chart.shadow.offsetx', 5);
         cg2.Set('chart.shadow.offsety', 5);
         cg2.Draw();
-
-        PrivatePub.subscribe("<%=  show_chanel(@wind_generator) %>", function (data, channel) {
-            alert(data.chat_message);
-        });
     }
 </script>
+
+<%= subscribe_to  "#{show_chanel(@wind_generator)}" %>
+
 
 
 
