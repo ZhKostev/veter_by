@@ -1,0 +1,37 @@
+    var cg = new RGraph.CornerGauge('cvs', <%= @wind_generator.min_rated_power %>, <%= @wind_generator.max_rated_power %>, <%= @wind_generator.current_power.to_f %>);
+    cg.Set('chart.colors.ranges',
+            [
+                [<%= (@wind_generator.min_rated_power).round(1) %>, <%= (@wind_generator.min_rated_power*1.1).round(1) %>, 'yellow'],
+                [<%= (@wind_generator.min_rated_power*1.1).round(1) %>, <%= (@wind_generator.min_rated_power*1.2).round(1) %>, 'yellow'],
+                [<%= (@wind_generator.min_rated_power*1.2).round(1) %>, <%= (@wind_generator.max_rated_power*0.8).round(1) %>, '#0f0'],
+                [<%= (@wind_generator.max_rated_power*0.8).round(1) %>, <%= (@wind_generator.max_rated_power*0.9).round(1) %>, 'yellow'],
+                [<%= (@wind_generator.max_rated_power*0.9).round(1) %>, <%= (@wind_generator.max_rated_power).round(1) %>, 'red']
+            ]);
+    cg.Set('chart.value.text.units.pre', 'Вт/ч');
+    cg.Set('chart.value.text.boxed', false);
+    cg.Set('chart.value.text.size', 14);
+    cg.Set('chart.value.text.font', 'Verdana');
+    cg.Set('chart.value.text.bold', true);
+    cg.Set('chart.value.text.decimals', 2);
+    cg.Set('chart.shadow.offsetx', 5);
+    cg.Set('chart.shadow.offsety', 5);
+    cg.Draw();
+
+    var cg2 = new RGraph.CornerGauge('cvs2', <%= @wind_generator.min_rated_wind_speed %>, <%= @wind_generator.max_wind_speed %>, <%= @wind_generator.current_wind_speed.to_f %>);
+    cg2.Set('chart.colors.ranges',
+            [
+                [<%= (@wind_generator.min_rated_wind_speed).round(1) %>, <%= (@wind_generator.min_rated_wind_speed*1.1).round(1) %>, 'yellow'],
+                [<%= (@wind_generator.min_rated_wind_speed*1.1).round(1) %>, <%= (@wind_generator.min_rated_wind_speed*1.2).round(1) %>, 'yellow'],
+                [<%= (@wind_generator.min_rated_wind_speed*1.2).round(1) %>, <%= (@wind_generator.max_wind_speed*0.8).round(1) %>, '#0f0'],
+                [<%= (@wind_generator.max_wind_speed*0.8).round(1) %>, <%= (@wind_generator.max_wind_speed*0.9).round(1) %>, 'yellow'],
+                [<%= (@wind_generator.max_wind_speed*0.9).round(1) %>, <%= (@wind_generator.max_wind_speed).round(1) %>, 'red']
+            ]);
+    cg2.Set('chart.value.text.units.pre', 'м/с');
+    cg2.Set('chart.value.text.boxed', false);
+    cg2.Set('chart.value.text.size', 14);
+    cg2.Set('chart.value.text.font', 'Verdana');
+    cg2.Set('chart.value.text.bold', true);
+    cg2.Set('chart.value.text.decimals', 2);
+    cg2.Set('chart.shadow.offsetx', 5);
+    cg2.Set('chart.shadow.offsety', 5);
+    cg2.Draw();

@@ -40,7 +40,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'simplecov'
-  gem 'debugger'
+  #gem 'debugger'
 end
 
 # To use ActiveModel has_secure_password

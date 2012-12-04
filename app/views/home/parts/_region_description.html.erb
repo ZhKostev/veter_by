@@ -1,0 +1,46 @@
+<h2>      <%= @region.title %>    </h2>
+
+<div class="show_row">
+  <div class="show_label">
+    Кол-во электростанции:
+  </div>
+  <div class="show_value">
+    <%= @region.wind_generators.count %>
+  </div>
+</div>
+
+<div class="show_row">
+  <div class="show_label">
+    Кол-во рабочих электростанции:
+  </div>
+  <div class="show_value notice_color">
+    <%= @working_generators_count %>
+  </div>
+</div>
+
+<div class="show_row">
+  <div class="show_label">
+    Кол-во вышедших из строя электростанции:
+  </div>
+  <div class="show_value <%= 'error_color' if @error_generators_count > 0 %>">
+    <%= @error_generators_count%>
+  </div>
+</div>
+
+<div class="show_row">
+  <div class="show_label">
+    Текущее производство электроэнергии, Вт/ч :
+  </div>
+  <div class="show_value">
+    <%= @current_power %>
+  </div>
+</div>
+
+<div class="show_row">
+  <div class="show_label">
+    Загрузка эектростанции, % :
+  </div>
+  <div class="show_value">
+    <%= @kpd %>
+  </div>
+</div>

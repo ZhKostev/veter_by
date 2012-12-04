@@ -1,10 +1,12 @@
 <script type="text/javascript">
 
-<% publish_to show_chanel(@wind_generator) do %>
-    alert(1)
+<% publish_to "#{show_chanel(@wind_generator)}" do %>
+    <%= render 'wind_generators/build_charts.js.erb' %>
+    $('#current_power').html('<%= @wind_generator.current_power %>');
+    $('#current_wind').html('<%= @wind_generator.current_wind_speed %>');
 <% end %>
 
 <% publish_to "#{index_chanel(@region)}" do %>
-    $("body").html('a');
+    $("#region_desc").html('<%= j render "home/parts/region_description" %>');
 <% end %>
 </script>

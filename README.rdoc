@@ -1,1 +1,8 @@
-Start Faye rackup private_pub.ru -s thin -E production
+Start Faye
+    rackup private_pub.ru -s thin -E production
+Simulate request
+    normal
+        http://localhost:3000/3/request_handle/15/handle_data_request?wind=8&power=9
+    with error
+        http://localhost:3000/3/request_handle/15/handle_data_request?error=true
+

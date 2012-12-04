@@ -6,53 +6,8 @@
 </div>
 
 <div class="right map_container map_description">
-  <div class="map_description_content">
-    <h2>      <%= @region.title %>    </h2>
-
-    <div class="show_row">
-      <div class="show_label">
-        Кол-во электростанции:
-      </div>
-      <div class="show_value">
-        <%= @region.wind_generators.count %>
-      </div>
-    </div>
-
-    <div class="show_row">
-      <div class="show_label">
-        Кол-во рабочих электростанции:
-      </div>
-      <div class="show_value">
-        <%= @region.wind_generators.count %>
-      </div>
-    </div>
-
-    <div class="show_row">
-      <div class="show_label">
-        Кол-во вышедших из строя электростанции:
-      </div>
-      <div class="show_value">
-        <%= 0 %>
-      </div>
-    </div>
-
-    <div class="show_row">
-      <div class="show_label">
-        Текущее производство электроэнергии, Вт/ч :
-      </div>
-      <div class="show_value">
-        <%= 600 %>
-      </div>
-    </div>
-
-    <div class="show_row">
-      <div class="show_label">
-        Загрузка эектростанции, % :
-      </div>
-      <div class="show_value">
-        <%= 60 %>
-      </div>
-    </div>
+  <div class="map_description_content" id="region_desc">
+    <%= render "home/parts/region_description" %>
   </div>
 </div>
 
@@ -74,13 +29,6 @@
       amet semper vitae, consectetur eu lorem. Nulla convallis mollis tincidunt.
     </p>
 
-    <p>
-      Nunc eu sapien metus, sed commodo enim. Donec mauris mauris, ullamcorper non ullamcorper vitae, sagittis in mi.
-      Pellentesque eget ligula non risus mollis vestibulum a et orci. Maecenas feugiat metus a nunc malesuada suscipit.
-      Maecenas faucibus mattis nulla ac molestie. Ut ut vulputate mauris. Integer leo eros, bibendum at bibendum rutrum,
-      semper et turpis. Donec nunc est, iaculis at blandit quis, luctus ut turpis. Pellentesque id turpis elit, ac porta
-      tortor. Nullam quis tortor metus, sit amet eleifend sapien.
-    </p>
   </div>
 </div>
 <div class="clear"></div>

@@ -4,6 +4,7 @@ class WindGenerator < ActiveRecord::Base
   mount_uploader :photo, PhotoUploader
 
   has_many :notifications, :dependent => :destroy
+  has_many :generator_states, :dependent => :destroy, :order => 'created_at ASC'
   accepts_nested_attributes_for :notifications, :allow_destroy => true
   belongs_to :region
 
@@ -13,6 +14,24 @@ class WindGenerator < ActiveRecord::Base
 
   validates :title, :region_id, :longitude, :latitude, :max_rated_power,
             :min_rated_power, :min_rated_wind_speed, :max_wind_speed, :presence => true
+
+  def current_state
+    generator_states.last
+  end
+
+  def not_working?
+    current_state.try(:error)
+  end
+
+  def current_power
+    return 0 if not_working?
+    (current_state.try(:power) || 0).round(2)
+  end
+
+  def current_wind_speed
+    return 0 if not_working?
+    (current_state.try(:wind_speed) || 0).round(2)
+  end
 
   def gmaps4rails_address
     "minsk"
